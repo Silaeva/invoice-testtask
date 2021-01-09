@@ -1,17 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import {createStore, applyMiddleware} from "redux";
+import {composeWithDevTools} from "redux-devtools-extension";
+import {Provider} from "react-redux";
+import thunk from "redux-thunk";
+import {createAPI} from "./api";
+import './styles/index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {reducer} from "./store/reducer";
+import {AuthorizationStatus} from "./const";
+import {setAuthStatus} from "./store/action";
+
+const api = createAPI(
+  () => store.dispatch(setAuthStatus(AuthorizationStatus.NO_AUTH))
+);
+
+const store = createStore(
+  reducer,
+  composeWithDevTools(
+    applyMiddleware(thunk.withExtraArgument(api))
+  )
+);
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store} >
+    <div className="app-container">
+      <App />
+    </div>
+  </Provider>,
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

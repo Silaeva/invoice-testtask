@@ -1,0 +1,184 @@
+.terminals__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.terminals__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+}
+
+.terminals__list {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+
+  list-style: none;
+}
+
+.terminals__item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.terminals__label {
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.terminals__label[for="description"] {
+  margin-bottom: 10px;
+}
+
+.terminals__input {
+  @include input;
+  margin-bottom: 20px;
+}
+
+.terminals__input[name="description"] {
+  resize: vertical;
+}
+
+.terminals__prompt {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 50px;
+  align-self: flex-start;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.terminals__submit {
+  @include button;
+
+  margin-bottom: 50px;
+}
+
+.terminals__added {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.terminals__added-title {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 30px;
+
+  text-align: center;
+  font-weight: 400;
+}
+
+.terminals__table {
+  width: 90%;
+
+  border-collapse: collapse;
+}
+
+.terminals__table-header:not(.terminals__table-header--delete) {
+  padding: 15px;
+
+  background-color: #eeeeee;
+
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 400;
+}
+
+.terminals__table-header:first-child {
+  border-right: 1px solid #ffffff;
+}
+
+.terminals__cell {
+  text-align: center;
+  font-size: 14px;
+
+  word-break: break-all;
+}
+
+.terminals__cell:first-child {
+  border-right: 1px solid #eeeeee;
+}
+
+.terminals__cell:not(.terminals__cell--delete) {
+  border-bottom: 1px solid #eeeeee;
+  padding: 10px;
+}
+
+.terminals__cell--delete {
+  width: 10%;
+  background-color: #ffffff;
+}
+
+.terminals__table-header--name {
+  width: 40%;
+}
+
+.terminals__table-header--desc {
+  width: 50%;
+}
+
+.terminals__table-header--delete {
+  width: 10%;
+}
+
+.terminals__cell--delete {
+  padding: 0;
+}
+
+.terminals__delete-btn {
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  background-image: url('../img/cross.svg');
+  background-repeat: no-repeat;
+  background-size: 10px;
+  background-position: center;
+
+  border: none;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    opacity: 0.5;
+  }
+}
+
+@media (min-width: 960px) {
+  .terminals__form {
+    width: 50%;
+  }
+
+  .terminals__label {
+    font-size: 18px;
+  }
+  
+  .terminals__prompt {
+    margin-bottom: 80px;
+  }
+
+  .terminals__submit {
+    margin-bottom: 70px;
+  }
+
+  .terminals__added-title {
+    margin-bottom: 40px;
+  }
+
+  .terminals__table-header {
+    font-size: 18px;
+  }
+
+  .terminals__cell {
+    font-size: 16px;
+  }
+  
+}
