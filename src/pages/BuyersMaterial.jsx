@@ -3,7 +3,6 @@ import {Link} from "react-router-dom";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import MaterialTable from "material-table";
-// import {mockBuyers} from "../mock-data";
 import Search from '@material-ui/icons/Search';
 
 const BuyersMaterial = (props) => {

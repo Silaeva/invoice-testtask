@@ -82,7 +82,7 @@
   border-collapse: collapse;
 }
 
-.terminals__table-header:not(.terminals__table-header--delete) {
+.terminals__table-header {
   padding: 15px;
 
   background-color: #eeeeee;
@@ -107,8 +107,15 @@
   border-right: 1px solid #eeeeee;
 }
 
-.terminals__cell:not(.terminals__cell--delete) {
+.terminals__cell {
   border-bottom: 1px solid #eeeeee;
+}
+
+.terminals__cell--delete {
+  border-bottom: 1px solid #eeeeee;
+}
+
+.terminals__cell:not(.terminals__cell--delete) {
   padding: 10px;
 }
 
