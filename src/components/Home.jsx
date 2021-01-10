@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
-import {AuthorizationStatus} from "../const";
+import {AuthorizationStatus} from "../helpers/const";
 
 const Home = (props) => {
   const {authorizationStatus} = props;
@@ -11,7 +11,7 @@ const Home = (props) => {
     <div className="content home-page">
       <h1 className="content__title">Главная страница</h1>
 
-      <p className="home-page__text">Водолей: Вы можете заснуть или быть укушенным мухой (крокодилом). Ваши волосы должны быть черными, как у бегемота. Сегодня вы сами должны решить: будете ли вы теперь прыгать с кровати или ползать по полу. Кальций важен в укреплении лбов.</p>
+      <p className="home-page__text">Компьютеры коренным образом изменили жизнь каждого человека. Несколько десятилетий назад люди даже не знали ничего об этих электронных устройствах, тогда как в наши дни даже маленький ребенок может управлять этой машиной. Почти все современные технологии зависит от компьютеров, которые используются для хранения данных: файлов, секретной информации, банковских операций и прочего.</p>
       {
         authorizationStatus === AuthorizationStatus.NO_AUTH 
         ?

@@ -1,0 +1,9 @@
+.buyers__link {
+  color: #3b3d46;
+  text-decoration: underline;
+
+  &:hover,
+  &:focus {
+    opacity: 0.5;
+  }
+}

@@ -2,7 +2,8 @@ import React, {useState, useEffect} from 'react';
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import {loadUser, setIsloading} from "../store/action";
-import {PASSWORD_REGEXP} from "../const";
+import {PASSWORD_REGEXP} from "../helpers/const";
+import "./auth.module.scss";
 
 const Auth = (props) => {
   const {getUser, isUserLoading, isUserLoadError, isUserLoadSuccess, user} = props;

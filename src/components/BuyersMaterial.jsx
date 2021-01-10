@@ -14,7 +14,7 @@ const BuyersMaterial = (props) => {
       field: 'id', 
       sorting: false, 
       filtering: false,
-      render: rowData => <Link to={"/buyers/" + rowData.id} style={{color: '#000000'}}>{rowData.id}</Link>
+      render: rowData => <Link className="buyers__link" to={"/buyers/" + rowData.id}>{rowData.id}</Link>
     },
     {title: 'Имя покупателя', field: 'name', sorting: false},
     {title: 'Средний чек', field: 'average_check', type: 'numeric', filtering: false},

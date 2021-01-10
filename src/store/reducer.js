@@ -1,6 +1,6 @@
 import {ActionType} from "./action";
 import {mockBuyers} from "../mock-data";
-import {AuthorizationStatus} from "../const";
+import {AuthorizationStatus} from "../helpers/const";
 
 const initialState = {
   terminals: [{name: 'Some Name', description: 'any desc', id: '42343'}],

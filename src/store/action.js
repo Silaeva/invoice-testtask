@@ -1,4 +1,4 @@
-import {AuthorizationStatus} from "../const";
+import {AuthorizationStatus} from "../helpers/const";
 
 const ActionType = {
   ADD_TERMINAL: 'ADD_TERMINAL',

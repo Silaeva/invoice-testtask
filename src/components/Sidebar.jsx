@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
-import {AuthorizationStatus} from "../const";
+import {AuthorizationStatus} from "../helpers/const";
 
 const Sidebar = (props) => {
   const {authorizationStatus, user} = props;
