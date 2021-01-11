@@ -1,11 +1,16 @@
+.buyer {
+  width: 100%;
+}
+
 .buyer__list {
-  list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  list-style: none;
 }
 
 .buyer__data {
@@ -18,8 +23,8 @@
   align-items: center;
   justify-content: space-around;
 
-  background: linear-gradient(120deg, #797c8d, #9c9fb1 90%) ;
-  color: #ffffff;
+  background: linear-gradient(120deg, var(--accent-color), var(--input-border) 90%) ;
+  color: var(--main-bg);
 
   border-radius: 3px;
 }

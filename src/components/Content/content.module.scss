@@ -3,8 +3,11 @@
   width: 80%;
   padding-top: 40px;
   padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-  background-color: #ffffff;
+  background-color: var(--main-bg);
 }
 
 .content__title {

@@ -4,8 +4,10 @@ import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import MaterialTable from "material-table";
 import Search from '@material-ui/icons/Search';
+import {Content} from '../Content/Content';
+import styles from "./buyers.module.scss";
 
-const BuyersMaterial = (props) => {
+const Buyers = (props) => {
   const {buyers} = props;
 
   const columns = [
@@ -14,7 +16,7 @@ const BuyersMaterial = (props) => {
       field: 'id', 
       sorting: false, 
       filtering: false,
-      render: rowData => <Link className="buyers__link" to={"/buyers/" + rowData.id}>{rowData.id}</Link>
+      render: rowData => <Link className={styles["buyers__link"]} to={"/buyers/" + rowData.id}>{rowData.id}</Link>
     },
     {title: 'Имя покупателя', field: 'name', sorting: false},
     {title: 'Средний чек', field: 'average_check', type: 'numeric', filtering: false},
@@ -23,8 +25,7 @@ const BuyersMaterial = (props) => {
   ];
 
   return (
-    <div className="content">
-      <h1 className="content__title">Покупатели</h1>
+    <Content title="Покупатели">
       <MaterialTable 
         search={false}
         columns={columns} 
@@ -51,11 +52,11 @@ const BuyersMaterial = (props) => {
         }}
         icons={{Filter: forwardRef((props, ref) => <Search {...props} ref={ref} />)}}
         />
-    </div>
+    </Content>
   );
 };
 
-BuyersMaterial.propTypes = {
+Buyers.propTypes = {
   buyers: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
@@ -69,5 +70,5 @@ const mapStateToProps = (state) => ({
   buyers: state.buyers
 });
 
-export {BuyersMaterial};
-export default connect(mapStateToProps)(BuyersMaterial);
+export {Buyers};
+export default connect(mapStateToProps)(Buyers);

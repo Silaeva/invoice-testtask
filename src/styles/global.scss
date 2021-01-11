@@ -11,9 +11,9 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: #ffffff;
+  background-color: var(--main-bg);
 
-  color: #3b3d46;
+  color: var(--text-color);
   font-family: 'Roboto', 'Arial', sans-serif;
   font-style: normal;
 }
@@ -32,11 +32,6 @@ img {
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus {
-  -webkit-text-fill-color: #797c8d;
-  box-shadow: 0 0 0px 1000px #ffffff inset;
-}
-
-.root {
-  margin: 0;
-  padding: 0;
+  -webkit-text-fill-color: var(--text-color);
+  box-shadow: 0 0 0px 1000px var(--main-bg) inset;
 }

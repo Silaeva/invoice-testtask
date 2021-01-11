@@ -1,4 +1,5 @@
 .terminals__wrapper {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,8 +37,29 @@
 }
 
 .terminals__input {
-  @include input;
+  margin: 0;
   margin-bottom: 20px;
+  padding: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  min-height: 40px;
+
+  color: var(--accent-color);
+  background-color: var(--main-bg);
+  border: none;
+  border-bottom: 2px solid var(--input-border);
+
+  outline: none;
+  filter: none; // убирает стили автозаполнения в FF
+
+  &:hover,
+  &:focus {
+    border-bottom: 2px solid var(--accent-color);
+  }
+
+  &::placeholder {
+    opacity: 0.3;
+  }
 }
 
 .terminals__input[name="description"] {
@@ -54,9 +76,35 @@
 }
 
 .terminals__submit {
-  @include button;
-
+  min-width: 150px;
+  padding: 15px 20px;
   margin-bottom: 50px;
+
+  background-color: var(--accent-color);
+  color: var(--main-bg);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 1;
+
+  border: none;
+  border-radius: 3px;
+
+  cursor: pointer;
+  transition: background-color 0.5s;
+
+  &:hover:not(:disabled),
+  &:focus:not(:disabled) {
+    padding: 13px 18px;
+    color: var(--accent-color);
+    background-color: var(--main-bg);
+    border: 2px solid var(--accent-color);
+  }
+
+  &:disabled {
+    opacity: 0.2;
+    cursor: auto;
+  }
 }
 
 .terminals__added {
@@ -85,7 +133,7 @@
 .terminals__table-header {
   padding: 15px;
 
-  background-color: #eeeeee;
+  background-color: var(--table-color);
 
   font-size: 16px;
   line-height: 1;
@@ -93,7 +141,7 @@
 }
 
 .terminals__table-header:first-child {
-  border-right: 1px solid #ffffff;
+  border-right: 1px solid var(--main-bg);
 }
 
 .terminals__cell {
@@ -104,15 +152,15 @@
 }
 
 .terminals__cell:first-child {
-  border-right: 1px solid #eeeeee;
+  border-right: 1px solid var(--table-color);
 }
 
 .terminals__cell {
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid var(--table-color);
 }
 
 .terminals__cell--delete {
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid var(--table-color);
 }
 
 .terminals__cell:not(.terminals__cell--delete) {
@@ -121,7 +169,7 @@
 
 .terminals__cell--delete {
   width: 10%;
-  background-color: #ffffff;
+  background-color: var(--main-bg);
 }
 
 .terminals__table-header--name {
@@ -145,7 +193,7 @@
   width: 30px;
   height: 30px;
   background-color: transparent;
-  background-image: url('../img/cross.svg');
+  background-image: url('../../img/cross.svg');
   background-repeat: no-repeat;
   background-size: 10px;
   background-position: center;
